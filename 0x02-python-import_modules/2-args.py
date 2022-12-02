@@ -15,5 +15,5 @@ if __name__ == "__main__":
         length = 0
         for lit in lists:
             if length != 0:
-                print("{}: {}".format(length, l))
+                print("{}: {}".format(length, lit))
             length += 1
