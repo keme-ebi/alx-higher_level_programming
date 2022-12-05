@@ -4,7 +4,7 @@ def multiple_returns(sentence):
     f_char = sentence[0]
 
     if length == 0:
-        f_char = None
-    tup = (length, f_char)
-
+        tup = (length, None)
+    else:
+        tup = (length, f_char)
     return tup
