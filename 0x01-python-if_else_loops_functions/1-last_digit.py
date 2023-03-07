@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import random
 number = random.randint(-10000, 10000)
-l_digit = number % 10
+l_digit = number % 10 if number >= 0 else ((-number % 10) * -1)
 begin = "Last digit of"
 last_c = "and is less than 6 and not 0"
 
