@@ -6,7 +6,10 @@ class Square:
     """a class with private instance attribute"""
 
     def __init__(self, size):
-        """instantiation with optional size"""
+        """instantiation with optional size
+        Args:
+            size(int)=0: size of the square
+        """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         if size < 0:
