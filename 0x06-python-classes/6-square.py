@@ -44,9 +44,9 @@ class Square:
             value(tuple of int): tuple of integers
         """
         if (not isinstance(value, tuple)
-            or not isinstance(value, int)
-            or not (i in value >= 0)
-            or len(value) != 2):
+                or not all(sinstance(v, int) for v in value)
+                or not (i in value >= 0)
+                or len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             sel.__position = value
