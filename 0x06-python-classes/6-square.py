@@ -43,14 +43,18 @@ class Square:
         Args:
             value(tuple of int): tuple of integers
         """
-        if (not isinstance(value, tuple)
-                or not isinstance(value[0], int)
-                or not isinstance(value[1], int)
-                or not all(i >= 0 for i in value)
-                or (len(value) != 2)):
+        if not isinstance(value, tuple):
             raise TypeError("position must be a tuple of 2 positive integers")
-        else:
-            self.__position = value
+        if not isinstance(value[0], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not isinstance(value[1], int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(i >= 0 for i in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if (len(value) != 2):
+            raise TypeError("position must be a tuple of 2 positive integers")
+
+        self.__position = value
 
     def area(self):
         """public instance method that returns tbe area of the square"""
