@@ -43,7 +43,9 @@ class Square:
         Args:
             value(tuple of int): tuple of integers
         """
-        if (not isinstance(value, int(tuple))
+        if (not isinstance(value, tuple)
+                or not isinstance(value[0], int)
+                or not isinstance(value[1], int)
                 or not all(i >= 0 for i in value)
                 or (len(value) != 2)):
             raise TypeError("position must be a tuple of 2 positive integers")
