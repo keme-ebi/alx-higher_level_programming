@@ -44,12 +44,12 @@ class Square:
             value(tuple of int): tuple of integers
         """
         if (not isinstance(value, tuple)
-                or not all(sinstance(v, int) for v in value)
-                or not all(i >= 0 for i in value)
+                or not (isinstance(v, int) for v in value)
+                or not (i >= 0 for i in value)
                 or len(value) != 2):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
-            sel.__position = value
+            self.__position = value
 
     def area(self):
         """public instance method that returns tbe area of the square"""
