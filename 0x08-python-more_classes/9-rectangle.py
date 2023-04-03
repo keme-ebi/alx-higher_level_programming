@@ -105,4 +105,4 @@ class Rectangle:
         Arg:
             size: initialized to 0
         """
-        return cls(height = size, width = size)
+        return cls(height=size, width=size)
