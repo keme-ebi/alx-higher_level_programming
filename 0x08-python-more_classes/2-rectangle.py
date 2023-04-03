@@ -4,7 +4,7 @@
 
 class Rectangle:
     """an class that defines a rectangle with private instance attributes"""
-    
+
     def __init__(self, width=0, height=0):
         """instatiation with optional width and height
         Args:
