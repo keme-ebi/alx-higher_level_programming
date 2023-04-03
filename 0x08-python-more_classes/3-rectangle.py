@@ -4,15 +4,15 @@
 
 class Rectangle:
     """an class that defines a rectangle with private instance attributes"""
-    
+
     def __init__(self, width=0, height=0):
         """instatiation with optional width and height
         Args:
             width(int): width of the rectangle
             height(int): height of the rectangle
         """
-        self.__width = width
-        self.__height = height
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -39,8 +39,11 @@ class Rectangle:
     @height.setter
     def height(self, value):
         """property setter
-        Args:                                                     value(int): value for rectangle height            """
-        if not isinstance(value, int):                            raise TypeError("height must be an integer")
+        Args:
+            value(int): value for rectangle height
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
