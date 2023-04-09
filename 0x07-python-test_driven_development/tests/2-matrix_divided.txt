@@ -1,0 +1,86 @@
+===============================
+How to use 2-matrix_divided.py
+===============================
+
+This library only has one function called ``matrix_divided()``.
+It takes 2 arguments, the first is a matrix (list of lists), and the second a number to divided the matrix.
+
+Importing the function:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+division of matrix of integers:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+matrix with a string:
+	>>> matrix = [[1, 2, 3], [4, 5, 'f']]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+uneven size of matrix:
+	>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	TypeError: Each row of the matrix must have the same size
+
+tuple in the list:
+	>>> matrix = [[1, 2, 3], [4, 5, 6], (1, 2)]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix of integers and floats:
+	>>> matrix = [[1, 2, 3.9], [50.6, 20, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.3], [16.87, 6.67, 2.0]]
+
+matrix divided by a negative number:
+	>>> matrix_divided(matrix, -3)
+	[[-0.33, -0.67, -1.3], [-16.87, -6.67, -2.0]]
+
+matrix divided by zero:
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+matrix divided by a string:
+	>>> matrix_divided(matrix, 'f')
+	Traceback (most recent call last):
+	TypeError: div must be a number
+
+matrix divided by a float:
+	>>> matrix = [[1, 2, 3.9], [50.6, 40, 6]]
+	>>> matrix_divided(matrix, 2.5)
+	[[0.4, 0.8, 1.56], [20.24, 16.0, 2.4]]
+
+NaN in matrix:
+	>>> matrix = [[1, 'NaN', 3.9], [50.6, 40, 6]]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for /: 'str' and 'int'
+
+float overflow:
+	>>> matrix = [[1, float('inf'), 3.9], [50.6, 40, 6]]
+	>>> matrix_divided(matrix, 2)
+	[[0.5, inf, 1.95], [25.3, 20.0, 3.0]]
+
+no matrix:
+	>>> matrix = []
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	...
+	IndexError: list index out of range
+
+matrix of 1 list:
+	>>> matrix = [[50.6, 40, 6]]
+	>>> matrix_divided(matrix, 2)
+	[[25.3, 20.0, 3.0]]
+
+just a regulat list:
+	>>> matrix = [50.6, 40, 6]
+	>>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
