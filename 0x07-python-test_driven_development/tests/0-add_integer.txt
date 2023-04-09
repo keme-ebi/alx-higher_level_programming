@@ -1,0 +1,56 @@
+============================
+How to use 0-add_integer.py
+============================
+
+This library only has one function called ``add_integer()``.
+By default, the second argument in the function has been initialised to 98.
+
+Importing the function
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+addition with integers:
+	>>> add_integer(1, 2)
+	3
+
+addition with floats:
+	>>> add_integer(100.3, 50.5)
+	150
+
+addition with float and integer:
+	>>> add_integer(100.3, 6)
+	106
+
+addition with integer and float:
+	>>> add_integer(10, 5.3)
+	15
+
+addition with positive and negative integer:
+	>>> add_integer(100, -2)
+	98
+
+addition with positive float and negative integer:
+	>>> add_integer(100.3, -2)
+	98
+
+addition with more than 2 arguments:
+	>>> add_integer(10, 5, 6)
+	Traceback (most recent call last):
+	TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+addition with one argument:
+	>>> add_integer(10)
+	108
+
+addition with an integer and a string:
+	>>> add_integer(5, "boys")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+addition with a string and an integer:
+	>>> add_integer("class", 8)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+addition with empty values:
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
