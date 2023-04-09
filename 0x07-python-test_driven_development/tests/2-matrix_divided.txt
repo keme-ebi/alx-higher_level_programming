@@ -60,7 +60,7 @@ NaN in matrix:
 	>>> matrix_divided(matrix, 2)
 	Traceback (most recent call last):
 	...
-	TypeError: unsupported operand type(s) for /: 'str' and 'int'
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
 
 float overflow:
 	>>> matrix = [[1, float('inf'), 3.9], [50.6, 40, 6]]
