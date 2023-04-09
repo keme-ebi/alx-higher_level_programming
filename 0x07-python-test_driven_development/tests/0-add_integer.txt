@@ -41,6 +41,16 @@ addition with one argument:
 	>>> add_integer(10)
 	108
 
+float overflow:
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	Overflow: cannot convert float infinity to integer
+
+float NaN:
+	>>> add_integer(5, float('NaN'))
+	Traceback (most recent call last):
+	ValueError: cannot convert float NaN to integer
+
 addition with an integer and a string:
 	>>> add_integer(5, "boys")
 	Traceback (most recent call last):
