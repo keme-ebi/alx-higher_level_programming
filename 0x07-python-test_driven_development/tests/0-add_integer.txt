@@ -42,9 +42,8 @@ addition with one argument:
 	108
 
 float overflow:
-	>>> add_integer(float('inf'))
+	>>> add_integer(7, float('inf'))
 	Traceback (most recent call last):
-	...
 	Overflow: cannot convert float infinity to integer
 
 float NaN:
