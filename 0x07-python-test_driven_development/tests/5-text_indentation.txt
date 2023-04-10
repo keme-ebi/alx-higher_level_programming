@@ -1,0 +1,81 @@
+=================================
+How to use 5-text_indentation.py
+=================================
+
+This library only has one function ``text_indentation(text)``.
+It prints a text with 2 new lines after each of these characters '.', '?', ':'
+
+Importing the function:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+empty string:
+	>>> text_indentation('')
+	<BLANKLINE>
+
+no argument:
+	>>> text_indentation()
+	Traceback (most recent call last):
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+simple text:
+	>>> text_indentation('the day has begun')
+	the day has begun
+	>>> text_indentation('can we go home already? i am tired')
+	can we go home already?
+	<BLANKLINE>
+	i am tired
+
+float overflow:
+	>>> text_indentation(float('inf'))
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+passing int as arg:
+	>>> text_indentation(20)
+	Traceback (most recent call last):
+	TypeError: text must be a string
+
+multiplying string:
+	>>> text_indentation(3 * 'do you have to go? it just started.')
+	do you have to go?
+	<BLANKLINE>
+	it just started.
+	<BLANKLINE>
+	do you have to go?
+	<BLANKLINE>
+	it just started.
+	<BLANKLINE>
+	do you have to go?
+	<BLANKLINE>
+	it just started.
+	<BLANKLINE>
+	<BLANKLINE>
+
+concatenating:
+	>>> text_indentation('do you have to go? it just started' + '.' + 'have some fun')
+	do you have to go?
+	<BLANKLINE>
+	it just started.
+	<BLANKLINE>
+	have some fun
+
+text with space at the end:
+	>>> text_indentation('a man once said: do you know what to do? if no, look to me for advice ')
+	a man once said:
+	<BLANKLINE>
+	do you know what to do?
+	<BLANKLINE>
+	if no, look to me for advice 
+
+text with space at the beginning and end:
+	>>> text_indentation(' a man once said: do you know what to do? if no, look to me for advice ')
+	a man once said:
+	<BLANKLINE>
+	do you know what to do?
+	<BLANKLINE>
+	if no, look to me for advice 
+
+2 args:
+	>>> text_indentation(' a man once said: do you know what to do? if no, look to me for advice ', 'a wise man')
+	Traceback (most recent call last):
+	TypeError: text_indentation() takes 1 positional argument but 2 were given
