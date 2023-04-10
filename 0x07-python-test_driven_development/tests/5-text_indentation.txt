@@ -10,7 +10,6 @@ Importing the function:
 
 empty string:
 	>>> text_indentation('')
-	<BLANKLINE>
 
 no argument:
 	>>> text_indentation()
@@ -48,7 +47,6 @@ multiplying string:
 	do you have to go?
 	<BLANKLINE>
 	it just started.
-	<BLANKLINE>
 	<BLANKLINE>
 
 concatenating:
