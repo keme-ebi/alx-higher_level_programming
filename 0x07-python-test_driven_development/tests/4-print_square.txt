@@ -1,0 +1,166 @@
+=============================
+How to use 4-print_square.py
+=============================
+
+This library has only one function ``print_square``, it prints a square with the character ``#``. It takes only one argument ``size``. The size determines the size of the square
+
+Importing the function:
+	>>> print_square = __import__('4-print_square').print_square
+
+regular use:
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+
+when size is zero:
+	>>> print_square(0)
+	>>>
+
+when size is one:
+	>>> print_square(1)
+	#
+
+a negative size:
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+no size given:
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
+
+size as a float:
+	>>> print_square(5.6)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+a float of zero:
+	>>> print_square(0.0)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+string as arg:
+	>>> print_square("9")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+typecasting str to int:
+	>>> print_square(int("9"))
+	#########
+	#########
+	#########
+	#########
+	#########
+	#########
+	#########
+	#########
+	#########
+
+using bool arg:
+	>>> print_square(True)
+	#
+
+when bool is false:
+	>>> print_square(False)
+	>>>
+
+float overflow:
+	>>> print_square(float('inf'))
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+passing list as arg:
+	>>> print_square([5, 6])
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> print_square([5])
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+passing tuple as arg:
+	>>> print_square((1))
+	#
+
+using mathematical operations with numbers:
+	>> print_square(2+2)
+	###
+	###
+	###
+	###
+	>> print_square(2 * 10)
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	####################
+	>>> print_square(20 - 12)
+	########
+	########
+	########
+	########
+	########
+	########
+	########
+	########
+	>>> print_square(20 / 12)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> print_square(20 / 2)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+	>>> print_square(20 // 12)
+	#
+	>>> print_square(20 // 2)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	>>> print_square(2 ** 2)
+	####
+	####
+	####
+	####
+	>>> print_square(20 % 2)
+	>>>
+	>>> print_square(20 % 7)
+	######
+	######
+	######
+	######
+	######
+	######
