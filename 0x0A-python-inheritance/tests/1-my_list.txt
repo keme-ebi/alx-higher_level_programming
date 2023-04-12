@@ -1,0 +1,66 @@
+========================
+How to use 1-my_list.py
+========================
+
+This library contains a class ``MyList`` that inherits from list.
+It has a public instance method ``print_sorted(self)`` that prints the list but sorted(ascending sort)
+
+Importing the module:
+	>>> MyList = __import__('1-my_list').MyList
+
+checking the class alone:
+	>>> MyList()
+	[]
+
+assigning values directly to the class:
+	>>> MyList(1, 2)
+	Traceback (most recent call last):
+	TypeError: __init__() takes 1 positional argument but 3 were given
+	>>> MyList(1)
+	Traceback (most recent call last):
+	TypeError: __init__() takes 1 positional argument but 2 were given
+
+working with an instance of the class:
+	>>> my_list = MyList()
+	>>> my_list()
+	Traceback (most recent call last):
+	TypeError: 'MyList' object is not callable
+	>>> my_list([])
+	Traceback (most recent call last):
+	TypeError: 'MyList' object is not callable
+
+appending values to the list, printing the list and sorting it:
+	>>> my_list.append(4)
+	>>> my_list.append(6)
+	>>> my_list.append(8)
+	>>> my_list.append(2)
+	>>> print(my_list)
+	[4, 6, 8, 2]
+	>>> my_list.print_sorted()
+	[2, 4, 6, 8]
+
+checking for empty list:
+	>>> my_list = MyList()
+	>>> print(my_list)
+	[]
+
+working with negative numbers:
+	>>> my_list.append(-7)
+	>>> my_list.append(-4)
+	>>> my_list.append(-10)
+	>>> my_list.append(-5)
+	>>> print(my_list)
+	[-7, -4, -10, -5]
+	>>> my_list.print_sorted()
+	[-10, -7, -5, -4]
+
+working with negative and positiv numbers
+	>>> my_list = MyList()
+	>>> my_list.append(6)
+	>>> my_list.append(-10)
+	>>> my_list.append(2)
+	>>> my_list.append(8)
+	>>> print(my_list)
+	[6, -10, 2, 8]
+	>>> my_list.print_sorted()
+	[-10, 2, 6, 8]
