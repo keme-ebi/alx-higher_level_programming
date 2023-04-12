@@ -9,7 +9,7 @@ class Square(Rectangle):
     """inherits from ``9-rectangle``"""
     def __init__(self, size):
         """instantiation with size and invoking the subclass"""
-        super().__init__(size, size)
+        Rectangle.__init__(self, size, size)
         self.integer_validator("size", size)
         self.__size = size
 
