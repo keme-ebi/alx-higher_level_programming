@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+"""8-rectangle module that has one class that inherits from 7-base_geometry
+"""
+
+
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+
+class Rectangle(BaseGeometry):
+    """a class that inherits from ``BaseGeometry``"""
+
+    def __init__(self, width, height):
+        """instantiation with width and height and\
+                invoking the __init__ of the parent class"""
+        BaseGeometry.__init__(self)
+
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+
+        self.__width = width
+        self.__height = height
+
+    #override area method inherited from BaseGeometry
+    def area(self):
+        """returns area of the rectangle"""
+        return (self.__width * self.__height)
+
+    def __str__(self):
+        """returns rectangle description"""
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
