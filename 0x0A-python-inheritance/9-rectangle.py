@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
         self.__width = width
         self.__height = height
 
-    #override area method inherited from BaseGeometry
+    # override area method inherited from BaseGeometry
     def area(self):
         """returns area of the rectangle"""
         return (self.__width * self.__height)
