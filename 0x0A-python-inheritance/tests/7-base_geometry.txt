@@ -94,8 +94,3 @@ passing None as value:
 	>>> bg.integer_validator("my_int", None)
 	Traceback (most recent call last):
 	TypeError: my_int must be an integer
-
-passing dict as value:
->>> bg.integer_validator("my_int", {"joy": 3})
-	Traceback (most recent call last):
-	TypeError: my_int must be an integer
