@@ -109,8 +109,15 @@ class Rectangle(Base):
 
     def display(self):
         """prints in stdout the Rectangle instance with the character ``#``"""
-        rect = '\n'.join('#' * self.__width for i in range(self.__height))
-        print(rect)
+        for s in range(self.__y):
+            print("")
+        for i in range(self.__height):
+            for j in range(self.__width + self.__x):
+                if j < self.x:
+                    print(" ", end="")
+                else:
+                    print("#", end="")
+            print()
 
     def __str__(self):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,\
