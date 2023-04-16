@@ -45,3 +45,12 @@ class Base:
             f_jstring = json.loads(json_string)
 
         return f_jstring
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        dummy = cls(4, 5)
+        dummy.x = 0
+        dummy.y = 0
+        dummy.update(**dictionary)
+        return dummy
