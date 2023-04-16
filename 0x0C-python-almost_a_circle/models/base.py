@@ -35,3 +35,13 @@ class Base:
 
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(to_json)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON sring representation"""
+        if json_string is None:
+            f_jstring = []
+        else:
+            f_jstring = json.loads(json_string)
+
+        return f_jstring
