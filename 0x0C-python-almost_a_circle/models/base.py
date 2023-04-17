@@ -47,6 +47,18 @@ class Base:
         return f_jstring
 
     @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = "{}.json".format(cls.__name__)
+
+        if not filename:
+            return []
+        else:
+            with open(filename, encoding='utf-8') as f:
+                l_file = cls.from_json_string(f.read())
+                return ([cls.create(**dic) for dic in l_file])
+
+    @classmethod
     def create(cls, **dictionary):
         """returns an instance with all attributes already set"""
         dummy = cls(4, 5)
