@@ -15,8 +15,8 @@ class Square(Rectangle):
     # override __str__ from Rectangle
     def __str__(self):
         """returns the square description"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,\
-            self.size)
+        return "[Square] ({}) {}/{} - {}".\
+            format(self.id, self.x, self.y, self.size)
 
     @property
     def size(self):
