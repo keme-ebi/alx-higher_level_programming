@@ -34,7 +34,7 @@ class Base:
 
         if list_objs is None:
             list_objs = []
-        
+
         to_json = cls.to_json_string([li.to_dictionary() for li in list_objs])
 
         with open(filename, mode="w", encoding="utf-8") as f:
