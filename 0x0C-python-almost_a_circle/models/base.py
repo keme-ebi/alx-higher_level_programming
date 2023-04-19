@@ -2,6 +2,7 @@
 """module with a class ``Base``"""
 
 import json
+import os
 
 
 class Base:
@@ -55,7 +56,7 @@ class Base:
         """returns a list of instances"""
         filename = "{}.json".format(cls.__name__)
 
-        if not filename:
+        if not os.path.exists(filename):
             return []
         else:
             with open(filename, encoding='utf-8') as f:
