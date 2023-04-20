@@ -1,8 +1,13 @@
 #!/usr/bin/python3
 """Unittest for Base class
 """
+import os
 import unittest
+from io import StringIO
+from contextlib import redirect_stdout
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 
 class TestBase(unittest.TestCase):
 
@@ -53,6 +58,24 @@ class TestBase(unittest.TestCase):
     def test_id_with_sets(self):
         b1 = Base({1, 2})
         self.assertEqual(b1.id, {1, 2})
+
+class TestBaseToJsonString(unittest.TestCase):
+
+    def test_None(self):
+        self.assertEqual("[]", Base.to_json_string([]))
+
+    def test_no_arg(self):
+        with self.assertRaises(TypeError):
+            Base.to_json_string()
+
+    def test_rectangle_to_json_string(self):
+        r1 = Rectangle(10, 7, 2, 8, 5)
+        self.assertEqual(str, type(Base.to_json_string([r1.to_dictionary()])))
+
+    def test_square_to_json_string(self):
+        s1 = Square(10, 7, 2, 8)
+        self.assertEqual(str, type(Base.to_json_string([s1.to_dictionary()])))
+
 
 if __name__ == "__main__":
     unittest.main()
