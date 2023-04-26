@@ -77,6 +77,23 @@ class TestRectangleInstances(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle(1, 1, 1, {2})
 
+    def test_arg_negative_numbers(self):
+        with self.assertRaises(ValueError):
+            Rectangle(-1, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(1, -1)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, -3)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, 3, -4)
+
+    def test_arg_zero(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 1)
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+
 class TestRectangleArea(unittest.TestCase):
 
     def test_area(self):

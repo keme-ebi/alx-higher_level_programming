@@ -101,6 +101,11 @@ class TestBaseSaveToFile(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertEqual("[]", file.read())
 
+    def test_save_empty_dictionary(self):
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual("[]", file.read())
+
     def test_single_rectangle(self):
         r1 = Rectangle(10, 7, 2, 8, 5)
         Rectangle.save_to_file([r1])
@@ -116,6 +121,11 @@ class TestBaseSaveToFile(unittest.TestCase):
 
     def test_save_empty(self):
         Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual("[]", file.read())
+
+    def test_save_empty_dictionary(self):
+        Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertEqual("[]", file.read())
 

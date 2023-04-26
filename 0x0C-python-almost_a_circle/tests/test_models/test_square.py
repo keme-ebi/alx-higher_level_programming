@@ -91,6 +91,18 @@ class TestSquareInstances(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square(1, 1, {2}, 1)
 
+    def test_arg_negative_numbers(self):
+        with self.assertRaises(ValueError):
+            Square(-1)
+        with self.assertRaises(ValueError):
+            Square(1, -1)
+        with self.assertRaises(ValueError):
+            Square(1, 1, -1)
+
+    def test_arg_zero(self):
+        with self.assertRaises(ValueError):
+            Square(0)
+
 class TestSquareArea(unittest.TestCase):
 
     def test_area(self):
