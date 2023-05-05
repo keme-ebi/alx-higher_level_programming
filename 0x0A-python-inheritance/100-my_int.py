@@ -2,7 +2,7 @@
 """MyInt module"""
 
 
-class MyInt:
+class MyInt(int):
     """MyInt class that reverses the == and != operators"""
     def __init__(self, value):
         """initialisation"""
