@@ -3,5 +3,5 @@
 -- results sorted in ascending order by tv_shows.title and tv_show_genres.genre_id
 SELECT title, genre_id
 	FROM tv_shows
-	NATURAL JOIN tv_show_genres ON tv_shows.id = tv_show_genres.genre_id
+	LEFT JOIN tv_show_genres ON tv_shows.id = tv_show_genres.genre_id
 	ORDER BY title ASC, genre_id ASC;
