@@ -13,8 +13,8 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name = '{aname}' \
-            ".format(aname=sys.argv[4]))
+    cur.execute("SELECT * FROM states WHERE name = '{aname}'\
+    ".format(aname=sys.argv[4]))
 
     for row in cur.fetchall():
         print(row)
