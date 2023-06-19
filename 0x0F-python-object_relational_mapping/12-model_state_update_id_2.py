@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""adds state object Louisiana to the database hbtn_0e_6_usa"""
+"""changes name of state object with id = 2 to the database hbtn_0e_6_usa"""
 
 from model_state import Base, State
 from sqlalchemy import (create_engine)
