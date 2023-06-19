@@ -25,9 +25,6 @@ if __name__ == "__main__":
 
     session.commit()
 
-    state = session.query(State).order_by(State.id.asc()).all()
-
-    for st in state:
-        print("{}: {}".format(st.id, st.name))
+    print(new.id)
 
     session.close()
