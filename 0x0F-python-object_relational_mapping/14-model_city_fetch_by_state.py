@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all state objects from the database hbtn_0e_6_usa"""
+"""lists all city objects from the database hbtn_0e_6_usa"""
 
 from model_state import Base, State
 from model_city import City
@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    join = session.query(City, State).join(State, City.state_id == State.id)
+    join = session.query(City, State).filter(City.state_id == State.id)
 
     results = join.order_by(City.id.asc()).all()
 
