@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This module lists all states with a name starting with \
-        N from the database hbtn_0e_0_usa"""
+"""This module lists all states with a name starting with
+N from the database hbtn_0e_0_usa"""
 
 
 import MySQLdb
@@ -13,7 +13,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
 
-    cur.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY states.\
+    cur.execute("SELECT * FROM states WHERE name LIKE '%N%' ORDER BY states.\
             id ASC")
 
     for row in cur.fetchall():
