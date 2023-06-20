@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""adds state object Louisiana to the database hbtn_0e_6_usa"""
+"""adds state object Louisiana to the database hbtn_0e_100_usa"""
 
 from relationship_state import Base, State
 from relationship_city import City
