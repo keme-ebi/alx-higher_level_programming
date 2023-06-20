@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""lists all state objects, and corresponding city objects in hbtn_0e_6_usa"""
+"""lists all state objects, and corresponding city objects in hbtn_0e_101_usa"""
 
 from relationship_state import Base, State
 from relationship_city import City
